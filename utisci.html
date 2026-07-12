@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Utisci gostiju — MAGACIN, Novi Sad</title>
+<meta name="description" content="Šta gosti kažu o Magacinu — gastro baru i restoranu u Novom Sadu. Ocene i utisci sa Google i TripAdvisor profila.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0D0817">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Utisci gostiju — MAGACIN, Novi Sad">
+<meta property="og:description" content="Šta gosti kažu o Magacinu. 4,8 od 5, 412 ocena.">
+<meta property="og:image" content="slike/hero.jpg">
+<meta property="og:locale" content="sr_RS">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0D0817;
+  --plum:#1A1030;
+  --brass:#E2A44C;
+  --steel:#9AA1AC;
+  --bone:#F2ECE3;
+  --mauve:#8C7CA3;
+  --serif:'Bodoni Moda', Georgia, serif;
+  --sans:'Space Grotesk', system-ui, sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, monospace;
+  --pad: clamp(20px, 5vw, 80px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--bone);font-family:var(--sans);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay;
+}
+body::before{
+  content:"";position:fixed;inset:-20vh -20vw;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(48vw 48vw at 16% 12%, rgba(226,164,76,.22), transparent 62%),
+    radial-gradient(52vw 52vw at 86% 82%, rgba(120,126,138,.14), transparent 64%);
+  filter:blur(30px);
+}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--brass);outline-offset:4px;border-radius:2px}
+
+.eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mauve)}
+.display{font-family:var(--serif);font-weight:400;line-height:.98;letter-spacing:-.01em}
+section{padding:clamp(64px,9vw,120px) var(--pad);position:relative}
+
+/* nav */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px var(--pad);
+  backdrop-filter:blur(14px);
+  background:linear-gradient(180deg, rgba(13,8,23,.9), rgba(13,8,23,0));
+  transition:padding .35s ease;
+}
+nav.compact{padding:12px var(--pad)}
+.brand{font-family:var(--serif);font-size:1.05rem;letter-spacing:.42em}
+.navlinks{display:flex;gap:28px;align-items:center}
+.navlinks a{font-size:.82rem;letter-spacing:.06em;color:var(--mauve);transition:color .25s}
+.navlinks a:hover,.navlinks a[aria-current]{color:var(--bone)}
+.btn{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  border:1px solid rgba(226,164,76,.5);color:var(--brass);
+  padding:11px 20px;border-radius:999px;background:transparent;cursor:pointer;
+  transition:background .3s,color .3s,border-color .3s,transform .3s;display:inline-block;
+}
+.btn:hover{background:var(--brass);color:var(--ink);border-color:var(--brass);transform:translateY(-1px)}
+.btn.solid{background:var(--brass);color:var(--ink)}
+.btn.solid:hover{background:var(--bone);border-color:var(--bone)}
+@media(max-width:860px){.navlinks a{display:none}}
+
+/* header */
+.top{padding-top:clamp(130px,17vh,190px)}
+.back{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mauve);display:inline-flex;gap:10px;transition:color .3s,gap .3s}
+.back:hover{color:var(--brass);gap:16px}
+.top h1{font-size:clamp(2.2rem,6vw,4.8rem);margin:26px 0 0}
+.top h1 em{font-style:italic;color:var(--brass)}
+
+/* score panel */
+.score{
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,6vw,72px);
+  align-items:center;margin-top:clamp(40px,6vw,64px);
+  padding:clamp(26px,3vw,38px) 0;border-top:1px solid rgba(242,236,227,.14);border-bottom:1px solid rgba(242,236,227,.14);
+}
+@media(max-width:760px){.score{grid-template-columns:1fr;gap:28px}}
+.score .num{font-family:var(--serif);font-size:clamp(3.4rem,8vw,5.4rem);line-height:1;color:var(--brass)}
+.score .stars{letter-spacing:.26em;color:var(--brass);font-size:1rem;margin-top:8px}
+.score .count{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve);margin-top:10px}
+.bars{display:grid;gap:9px;max-width:520px;width:100%}
+.bar{display:grid;grid-template-columns:22px 1fr 42px;gap:14px;align-items:center;
+  font-family:var(--mono);font-size:.68rem;color:var(--mauve);font-variant-numeric:tabular-nums}
+.bar .track{height:3px;background:rgba(242,236,227,.1);position:relative;overflow:hidden}
+.bar .track i{position:absolute;inset:0 auto 0 0;width:0;background:var(--brass);transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+.bar.dim .track i{background:var(--steel)}
+
+/* filters */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:clamp(40px,5vw,60px) 0 0}
+.chip{
+  font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid rgba(242,236,227,.16);background:transparent;color:var(--mauve);
+  padding:9px 16px;border-radius:999px;cursor:pointer;
+  transition:border-color .3s,color .3s,background .3s;
+}
+.chip:hover{border-color:var(--brass);color:var(--brass)}
+.chip.on{background:var(--brass);border-color:var(--brass);color:var(--ink)}
+
+/* reviews */
+.grid{columns:3;column-gap:14px;margin-top:clamp(30px,4vw,44px)}
+@media(max-width:1000px){.grid{columns:2}}
+@media(max-width:680px){.grid{columns:1}}
+.card{
+  break-inside:avoid;margin-bottom:14px;
+  padding:28px 26px;background:rgba(242,236,227,.03);
+  border-top:1px solid rgba(242,236,227,.14);
+  display:flex;flex-direction:column;gap:16px;
+  transition:background .4s,transform .4s,border-color .4s,opacity .5s;
+}
+.card:hover{background:rgba(226,164,76,.06);border-color:var(--brass);transform:translateY(-4px)}
+.card .s{letter-spacing:.2em;color:var(--brass);font-size:.76rem}
+.card p{font-family:var(--serif);font-size:1.1rem;line-height:1.5}
+.card p::before{content:"„"} .card p::after{content:"”"}
+.card .who{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve)}
+.card .who b{color:var(--bone);font-weight:400;letter-spacing:.1em}
+.card.hide{display:none}
+.card.reveal{opacity:0;transform:translateY(20px)}
+.card.in{opacity:1;transform:none}
+.empty{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--mauve);padding:40px 0}
+
+/* closing cta */
+.close-cta{
+  margin-top:clamp(56px,8vw,96px);padding:clamp(40px,6vw,72px) 0 0;
+  border-top:1px solid rgba(242,236,227,.14);
+  display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;
+}
+.close-cta h2{font-family:var(--serif);font-size:clamp(1.9rem,4.4vw,3.2rem);line-height:1.02}
+.close-cta h2 em{font-style:italic;color:var(--brass)}
+.close-cta .row{display:flex;gap:12px;flex-wrap:wrap}
+
+/* footer */
+footer{padding:clamp(56px,7vw,90px) var(--pad) 40px;border-top:1px solid rgba(242,236,227,.1)}
+.fgrid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-end}
+.fbrand{font-family:var(--serif);font-size:clamp(2.4rem,9vw,6.5rem);line-height:.9}
+.fbrand em{font-style:italic;color:var(--steel)}
+.fmeta{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--mauve);line-height:2;text-align:right}
+.fmeta a:hover{color:var(--brass)}
+.copy{margin-top:48px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;color:rgba(140,124,163,.6)}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  html{scroll-behavior:auto}
+  .card.reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="brand">MAGACIN</a>
+  <div class="navlinks">
+    <a href="index.html#kuhinja">Kuhinja i bar</a>
+    <a href="index.html#program">Program</a>
+    <a href="utisci.html" aria-current="page">Utisci</a>
+    <a href="index.html#faq">Pitanja</a>
+  </div>
+  <a href="index.html#rezervacija" class="btn">Rezerviši sto</a>
+</nav>
+
+<section class="top">
+  <a href="index.html" class="back"><span aria-hidden="true">←</span> Nazad na sajt</a>
+  <h1 class="display">Utisci <em>gostiju</em></h1>
+
+  <div class="score">
+    <div>
+      <div class="num">4,8</div>
+      <div class="stars" aria-hidden="true">★★★★★</div>
+      <div class="count">412 ocena · Google &amp; TripAdvisor</div>
+    </div>
+    <div class="bars">
+      <div class="bar"><span>5★</span><span class="track"><i data-w="78"></i></span><span>78%</span></div>
+      <div class="bar"><span>4★</span><span class="track"><i data-w="16"></i></span><span>16%</span></div>
+      <div class="bar dim"><span>3★</span><span class="track"><i data-w="4"></i></span><span>4%</span></div>
+      <div class="bar dim"><span>2★</span><span class="track"><i data-w="1"></i></span><span>1%</span></div>
+      <div class="bar dim"><span>1★</span><span class="track"><i data-w="1"></i></span><span>1%</span></div>
+    </div>
+  </div>
+
+  <div class="filters" role="group" aria-label="Filtriraj utiske">
+    <button class="chip on" data-f="sve">Sve (12)</button>
+    <button class="chip" data-f="hrana">Hrana</button>
+    <button class="chip" data-f="dorucak">Doručak</button>
+    <button class="chip" data-f="muzika">Muzika</button>
+    <button class="chip" data-f="bar">Bar</button>
+    <button class="chip" data-f="atmosfera">Atmosfera</button>
+  </div>
+
+  <div class="grid" id="grid">
+    <article class="card reveal" data-t="dorucak hrana">
+      <span class="s" aria-label="5 od 5">★★★★★</span>
+      <p>Došli smo na doručak, vratili se isto veče na večeru. Retko gde u gradu jedna kuhinja ume oboje.</p>
+      <div class="who"><b>Milica J.</b><span>Google · jul 2026</span></div>
+    </article>
+
+    <article class="card reveal" data-t="muzika atmosfera">
+      <span class="s" aria-label="5 od 5">★★★★★</span>
+      <p>Bend svira dva metra od stola, a i dalje možeš da razgovaraš. Neko je ovde razmišljao o zvuku.</p>
+      <div class="who"><b>Stefan R.</b><span>TripAdvisor · jun 2026</span></div>
+    </article>
+
+    <article class="card reveal" data-t="atmosfera hrana">
+      <span class="s" aria-label="5 od 5">★★★★★</span>
+      <p>Rezervisali smo sto za šestoro na rođendan. Niko nas nije terao da ustanemo posle sat vremena.</p>
+      <div class="who"><b>Ana &amp; Nikola</b><span>Google · jun 2026</span></div>
+    </article>
+
+    <article class="card reveal" data-t="hrana">
+      <span class="s" aria-label="5 od 5">★★★★★</span>
+      <p>Pačja prsa su bila tačno onako kako sam tražio. Kuhinja koja sluša je ređa nego što mislite.</p>
+      <div class="who"><b>Vladimir T.</b><span>Google · jun 2026</span></div>
+    </article>
+
+    <article class="card reveal" data-t="bar">
+      <span class="s" aria-label="5 od 5">★★★★★</span>
+      <p>Rakija flight je bio iznenađenje večeri. Barmen je znao šta priča i nije nas žurio.</p>
+      <div class="who"><b>Jelena M.</b><span>Google · maj 2026</span></div>
+    </article>
+
+    <article class="card reveal" data-t="dorucak">
+      <span class="s" aria-label="5 od 5">★★★★★</span>
+      <p>Radim iz kraja i svraćam skoro svako jutro. Kafa je ozbiljna, a u sedam je već sve spremno.</p>
+      <div class="who"><b>Marko P.</b><span>Google · maj 2026</span></div>
+    </article>
+
+    <article class="card reveal" data-t="atmosfera">
+      <span class="s" aria-label="5 od 5">★★★★★</span>
+      <p>Prostor je najlepši u Novom Sadu. Mural, lampe, dva nivoa — a nigde ne deluje pretenciozno.</p>
+      <div class="who"><b>Teodora S.</b><span>TripAdvisor · maj 2026</span></div>
+    </article>
+
+    <article class="card reveal" data-t="hrana bar">
+      <span class="s" aria-label="4 od 5">★★★★☆</span>
+      <p>Hrana odlična, kokteli još bolji. Jedina zamerka — subotom se teško dolazi do mesta bez najave.</p>
+      <div class="who"><b>Dušan K.</b><span>Google · april 2026</span></div>
+    </article>
+
+    <article class="card reveal" data-t="muzika">
+      <span class="s" aria-label="5 od 5">★★★★★</span>
+      <p>Došli zbog benda, ostali zbog svega ostalog. Nema ulaznice, a program je bolji nego u pola klubova.</p>
+      <div class="who"><b>Ivana R.</b><span>Google · april 2026</span></div>
+    </article>
+
+    <article class="card reveal" data-t="hrana">
+      <span class="s" aria-label="5 od 5">★★★★★</span>
+      <p>Tražila sam bezglutensko i dobila ceo prilagođen meni, bez ijednog uzdaha sa njihove strane.</p>
+      <div class="who"><b>Katarina Đ.</b><span>TripAdvisor · mart 2026</span></div>
+    </article>
+
+    <article class="card reveal" data-t="atmosfera bar">
+      <span class="s" aria-label="4 od 5">★★★★☆</span>
+      <p>Vodio sam klijente na poslovnu večeru i prošlo je bolje nego sastanak. Šank posle je bio bonus.</p>
+      <div class="who"><b>Nemanja L.</b><span>Google · mart 2026</span></div>
+    </article>
+
+    <article class="card reveal" data-t="dorucak atmosfera">
+      <span class="s" aria-label="5 od 5">★★★★★</span>
+      <p>Nedeljni doručak sa decom, pa uveče isto mesto bez njih. Malo lokala ume oba lica podjednako dobro.</p>
+      <div class="who"><b>Porodica Vuković</b><span>Google · februar 2026</span></div>
+    </article>
+  </div>
+
+  <p class="empty" id="empty" style="display:none">Nema utisaka u ovoj kategoriji.</p>
+
+  <div class="close-cta">
+    <h2 class="display">Ostavili su sto.<br>Sad je <em>vaš</em> red.</h2>
+    <div class="row">
+      <a href="index.html#rezervacija" class="btn solid">Rezerviši sto</a>
+      <a href="index.html#program" class="btn">Vidi program</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fgrid">
+    <div class="fbrand display">MAGA<em>CIN</em></div>
+    <div class="fmeta">
+      HAJDUK VELJKOVA 11, NOVI SAD<br>
+      <a href="tel:+381643223131">+381 64 322 3131</a><br>
+      <a href="mailto:sto@magacin.rs">sto@magacin.rs</a><br>
+      <a href="#">INSTAGRAM</a> · <a href="#">FACEBOOK</a>
+    </div>
+  </div>
+  <div class="copy">
+    <span>© 2026 MAGACIN GASTRO BAR</span>
+    <span>OD DORUČKA DO POSLE PONOĆI</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* score bars fill when seen */
+  const bars = document.querySelectorAll('.bar .track i');
+  new IntersectionObserver((es,o)=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        bars.forEach((b,i)=> setTimeout(()=> b.style.width = b.dataset.w+'%', reduce?0:i*90));
+        o.disconnect();
+      }
+    });
+  },{threshold:.4}).observe(document.querySelector('.bars'));
+
+  /* card reveals */
+  const io = new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.15, rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.card').forEach((c,i)=>{
+    c.style.transitionDelay = reduce ? '0ms' : (i%3)*70+'ms';
+    io.observe(c);
+  });
+
+  /* filters */
+  const cards = [...document.querySelectorAll('.card')];
+  const empty = document.getElementById('empty');
+  document.querySelectorAll('.chip').forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+      chip.classList.add('on');
+      const f = chip.dataset.f;
+      let shown = 0;
+      cards.forEach(c=>{
+        const ok = f==='sve' || c.dataset.t.split(' ').includes(f);
+        c.classList.toggle('hide', !ok);
+        if(ok){ shown++; c.classList.add('in'); }
+      });
+      empty.style.display = shown ? 'none' : 'block';
+    });
+  });
+
+  addEventListener('scroll', ()=>{
+    document.getElementById('nav').classList.toggle('compact', scrollY>60);
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
